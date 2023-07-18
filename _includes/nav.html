@@ -1,0 +1,11 @@
+<nav class="navigation">
+	<ul class="nav-list">
+		<li class="{% if page.url == '/' %} current_path current{% endif %}"><a href="{{ site.baseurl }}/">Home</a></li>
+		<li class='{% if page.url == "/pages/setup.html" %} current_path current{% endif %}'><a href="{{ site.baseurl }}/pages/setup.html">Hardware Setup</a></li>
+		<li class='{% if page.url == "/pages/packet-rate.html" %} current_path current{% endif %}'><a href="{{ site.baseurl }}/pages/packet-rate.html">Figure 3</a></li>
+		<li class='{% if page.url == "/pages/hdr.html" %} current_path current{% endif %}'><a href="{{ site.baseurl }}/pages/hdr.html">Figure 4</a></li>
+		<li class='{% if page.url == "/pages/hdr.html" %} current_path current{% endif %}'><a href="{{ site.baseurl }}/pages/hdr.html">Figure 5</a></li>
+		<li class='{% if page.url == "/pages/perf.html" %} current_path current{% endif %}'><a href="{{ site.baseurl }}/pages/perf.html">Table I</a></li>
+		<li class='{% if page.url == "/pages/worst-case.html" %} current_path current{% endif %}'><a href="{{ site.baseurl }}/pages/worst-case.html">Figure 6</a></li>
+	</ul>
+</nav>
