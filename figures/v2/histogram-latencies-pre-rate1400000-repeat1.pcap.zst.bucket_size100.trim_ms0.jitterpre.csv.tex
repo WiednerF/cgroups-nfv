@@ -1,0 +1,46 @@
+\RequirePackage{luatex85}
+\documentclass{standalone}
+\usepackage{tumcolor}
+\usepackage{siunitx}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+    \begin{tikzpicture}[>=latex]
+        \pgfplotscreateplotcyclelist{mystil}{
+            {TUMBlue, fill=TUMBlue, mark=none},
+            {TUMOrange, fill=TUMOrange, mark=none},
+            {TUMGreen, fill=TUMGreen, mark=none},
+            {TUMBlue!30, fill=TUMBlue!30, mark=none},
+            {TUMOrange!30, fill=TUMOrange!30, mark=none},
+            {TUMGreen!30, fill=TUMGreen!30, mark=none}
+        }
+        \begin{axis}[
+            width=15cm,
+            height=10cm,
+            xmin=0,
+            ymin=0,
+            xmax=1000,
+            restrict x to domain=0:1000,
+            grid=major,
+            xlabel = {Latency [\si{\micro\second}]},
+            ylabel = {Events},
+            tick label style = {font=\scriptsize},
+            point meta={y-x},
+            ybar=0,
+            cycle list name=mystil,
+            bar width=.1pt
+        ]
+
+            % runlatencies-pre-rate1400000-repeat1.pcap.zst.bucket_size100.trim_ms0.jitterpre.csv
+            % loop Not Known
+            \addplot table[
+                col sep=comma,
+                x expr= \thisrowno{0}/1000,
+                y expr= \thisrowno{1},
+            ]{results/latencies-pre-rate1400000-repeat1.pcap.zst.bucket_size100.trim_ms0.jitterpre.csv};
+
+        \end{axis}
+    \end{tikzpicture}
+\end{document}

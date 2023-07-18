@@ -1,0 +1,53 @@
+\RequirePackage{luatex85}
+\documentclass{standalone}
+\usepackage{tumcolor}
+\usepackage{siunitx}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+    \begin{tikzpicture}[>=latex]
+        \pgfplotscreateplotcyclelist{mystil}{
+            {TUMBlue, mark=*},
+            {TUMOrange, mark=x},
+            {TUMGreen, mark=square*},
+            {TUMBlue!30, mark=triangle*},
+            {TUMOrange!30, mark=diamond*},
+            {TUMGreen!30, mark=star}
+        }
+        \begin{axis}[
+            width=15cm,
+            height=10cm,
+            ymin=0,
+            grid=major,
+            xlabel = { Measurement time [\si{\second}] },
+            ylabel = { Packet rate [\si{\kilo pkt\per\second}] },
+            tick label style = {font=\scriptsize},
+            cycle list name=mystil,
+            mark options = {scale = .5},
+            legend pos=outer north east,
+        ]
+
+            % runlatencies-pre-rate1400000-repeat2.pcap.zst.trim_ms0.packetratepre.csv
+            % loop Not Known
+            \addplot table[
+                col sep=comma,
+                x expr= \thisrowno{0}/1000000000,
+                y expr= \thisrowno{1}/1000,
+            ]{results/latencies-pre-rate1400000-repeat2.pcap.zst.trim_ms0.packetratepre.csv};
+            \addlegendentry{Pre}
+
+            % runlatencies-pre-rate1400000-repeat2.pcap.zst.trim_ms0.packetratepre.csv
+            % loop Not Known
+            \addplot table[
+                col sep=comma,
+                x expr= \thisrowno{0}/1000000000,
+                y expr= \thisrowno{1}/1000,
+            ]{results/latencies-pre-rate1400000-repeat2.pcap.zst.trim_ms0.packetratepost.csv};
+            \addlegendentry{Post}
+
+
+        \end{axis}
+    \end{tikzpicture}
+\end{document}
