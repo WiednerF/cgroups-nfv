@@ -4,7 +4,7 @@
 NUM_CORES=4
 
 # Used for the evaluator scripts
-git clone https://github.com/AnonymContainer/containierized-low-latency/ /root/containierized-low-latency
+git clone https://github.com/WiednerF/cgroups-nfv/ /root/cgroups-nfv
 
 # Download PCAPs to /root/results
 cd /root/results
@@ -23,7 +23,7 @@ parallel -j $NUM_CORES "dropdb --if-exists root{ % }; createdb root{ % }; export
 # When using the precompiled CSV data, decompress them first and then put them into /root/results/data for generation of Figures
 
 # Copy required files for plotting
-cp -r ~/containierized-low-latency/scripts/evaluator/plotter/* ~/results
+cp -r ~/cgroups-nfv/scripts/evaluator/plotter/* ~/results
 
 cd ~/results
 mkdir figures
