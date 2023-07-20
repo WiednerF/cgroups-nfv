@@ -67,7 +67,7 @@ END
 cd /sys/fs/cgroup/cpuset
 mkdir housekeeping
 /bin/echo 0 > housekeeping/cpuset.mems
-/bin/echo 24-26 > housekeeping/cpuset.cpus
+/bin/echo 0-23,27-31 > housekeeping/cpuset.cpus
 
 # move all processes into housekeeping
 cset proc --move --fromset=root --toset=housekeeping
