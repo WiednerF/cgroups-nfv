@@ -4,7 +4,7 @@
 NUM_CORES=4
 
 # Used for the evaluator scripts
-git clone https://github.com/AnonymContainer/containierized-low-latency/ /root/containierized-low-latency
+git clone https://github.com/wiednerf/cgroups-nfv/ /root/cgroups-nfv/ 
 
 # Download PCAPs to /root/results
 cd /root/results
@@ -18,8 +18,8 @@ cd /root/results/data
 
 parallel -j $NUM_CORES "dropdb --if-exists root{ % }; createdb root{ % };
 <i class="bi bi-arrow-return-right"></i> export PGDATABASE=root{ % };
-<i class="bi bi-arrow-return-right"></i> ~/containierized-low-latency/scripts/evaluator/dbscripts/import.sh {};
-<i class="bi bi-arrow-return-right"></i> ~/containierized-low-latency/scripts/evaluator/analysis.sh {}"
+<i class="bi bi-arrow-return-right"></i> ~/cgroups-nfv/scripts/evaluator/dbscripts/import.sh {};
+<i class="bi bi-arrow-return-right"></i> ~/cgroups-nfv/scripts/evaluator/analysis.sh {}"
 <i class="bi bi-arrow-return-right"></i> ::: ../latencies-pre.pcap*.zst
 
 # After this under the folder /root/results/data all required CSVs are available
