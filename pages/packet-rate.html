@@ -14,7 +14,7 @@
 
 						<h1 id="the-chair-of-br-network-architectures-and-services">Figure 3</h1>
 						    		<p></p>
-						<h5>CGroups version 1</h5>
+						<h5>CGroups version 1, 64 bytes packet size</h5>
 						<div class="container">
 						<div class="row">
 						<div class="col-12 col-lg-6 col-xl-4">
@@ -55,7 +55,7 @@
 						</div>
 						</div>
 						</div>
-						<h5>CGroups version 2</h5>
+						<h5>CGroups version 2, 64 bytes packet size</h5>
 												<div class="container">
 						<div class="row">
 						<div class="col-12 col-lg-6 col-xl-4">
@@ -92,6 +92,52 @@
 							<figure class="figure">
 								<img class="figure-img img-fluid" src="{{site.baseurl}}/figures/v2/packetrate-latencies-pre-rate7000000-repeat2.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg"  alt="figures/v2/packetratelatencies-pre-rate7000000-repeat2.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg">
 								<figcaption class="figure-caption">Rate: 6.24 Mpkts/s, Repeat 2</figcaption>
+							</figure>
+						</div>
+						</div>
+						</div>
+						<h5>CGroups version 1, 1500 bytes packet size</h5>
+						<div class="container">
+						<div class="row">
+												<div class="col-12 col-lg-6 col-xl-4">
+							<figure class="figure">
+								<img class="figure-img img-fluid" src="{{site.baseurl}}/figures/v1-1500/packetrate-latencies-pre-rate800000-repeat0.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg"  alt="figures/v1-1500/packetratelatencies-pre-rate800000-repeat0.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg">
+								<figcaption class="figure-caption">Rate: 0.82 Mpkts/s, Repeat 0</figcaption>
+							</figure>
+						</div>
+												<div class="col-12 col-lg-6 col-xl-4">
+							<figure class="figure">
+								<img class="figure-img img-fluid" src="{{site.baseurl}}/figures/v1-1500/packetrate-latencies-pre-rate800000-repeat1.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg"  alt="figures/v1-1500/packetratelatencies-pre-rate800000-repeat1.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg">
+								<figcaption class="figure-caption">Rate: 0.82 Mpkts/s, Repeat 1</figcaption>
+							</figure>
+						</div>
+												<div class="col-12 col-lg-6 col-xl-4">
+							<figure class="figure">
+								<img class="figure-img img-fluid" src="{{site.baseurl}}/figures/v1-1500/packetrate-latencies-pre-rate800000-repeat2.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg"  alt="figures/v1-1500/packetratelatencies-pre-rate800000-repeat2.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg">
+								<figcaption class="figure-caption">Rate: 0.82 Mpkts/s, Repeat 2</figcaption>
+							</figure>
+						</div>
+						</div>
+						</div>
+						<h5>CGroups version 2, 1500 bytes packet size</h5>
+												<div class="container">
+						<div class="row">
+												<div class="col-12 col-lg-6 col-xl-4">
+							<figure class="figure">
+								<img class="figure-img img-fluid" src="{{site.baseurl}}/figures/v2-1500/packetrate-latencies-pre-rate800000-repeat0.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg"  alt="figures/v2-1500/packetratelatencies-pre-rate800000-repeat0.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg">
+								<figcaption class="figure-caption">Rate: 0.82 Mpkts/s, Repeat 0</figcaption>
+							</figure>
+						</div>
+												<div class="col-12 col-lg-6 col-xl-4">
+							<figure class="figure">
+								<img class="figure-img img-fluid" src="{{site.baseurl}}/figures/v2-1500/packetrate-latencies-pre-rate800000-repeat1.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg"  alt="figures/v2-1500/packetratelatencies-pre-rate800000-repeat1.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg">
+								<figcaption class="figure-caption">Rate: 0.82 Mpkts/s, Repeat 1</figcaption>
+							</figure>
+						</div>
+												<div class="col-12 col-lg-6 col-xl-4">
+							<figure class="figure">
+								<img class="figure-img img-fluid" src="{{site.baseurl}}/figures/v2-1500/packetrate-latencies-pre-rate800000-repeat2.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg"  alt="figures/v2-1500/packetratelatencies-pre-rate800000-repeat2.pcap.zst.trim_ms0.packetratepre.csv.pdf.svg">
+								<figcaption class="figure-caption">Rate: 0.82 Mpkts/s, Repeat 2</figcaption>
 							</figure>
 						</div>
 						</div>
@@ -240,9 +286,6 @@
 						<p>5. Repeat Steps 2 to 4 for each rate to be analyzed after saving the PCAPs at another place, because they will be overwritten otherwise.</p>
 						
 						<h2>Reproduce Figures and Data</h2>
-						<h3>Raw PCAP Data</h3>
-						<hr>
-						<p>All sampled RAW PCAP-Data will be made available after Acceptance due to limited capacity.</p>
 						<h3>Evaluation</h3>
 						<hr>
 						<p><a class="btn btn-outline-primary" data-bs-toggle="collapse" href="#setupE" role="button" aria-expanded="false" aria-controls="setupE">

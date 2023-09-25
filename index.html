@@ -20,21 +20,13 @@
 		  <div class="card-body">
 		    <p></p>
 		    <h4 class="card-title">Control Groups Added Latency in NFVs: An Update Needed?</h4>
-		    <p class="card-text">	The Linux kernel is continuously developing, and the development teams constantly add new versions of libraries with additional features.
-	The cgroups feature of the Linux kernel was recently updated
-	It is widely used by lightweight virtualization technologies such as Docker or LXC for resource isolation.
-	cgroups underwent a significant revamp from version 1 (v1) to version 2 (v2).
-	Researching the performance difference between these two versions regarding network latencies and throughput enables the usage of containers in time-critical applications for Network Function Virtualization (NFV).
-	Previous work does not consider cgroups as a potential source of latency in NFVs in their evaluations.
-	In this paper, we use commodity hard- and software to measure the difference between v1 and v2 in isolation.
-	Our experiments show that the two versions achieve the same degree of isolation. However, the tail latencies of v1 are higher than v2, which can be explained by a more efficient, 2.4 % less instruction-consuming implementation of v2.
-	Based on our findings, we recommend using v2 for low-latency, lightweight virtualization network deployments wherever possible.</p>
+		    <p class="card-text">	The Linux kernel is continuously developing, and the development teams constantly add new versions of libraries with additional features. The cgroups feature of the Linux kernel was recently updated. It is widely used by lightweight virtualization technologies such as Docker or LXC for resource isolation. cgroups underwent a significant revamp from version 1 (v1) to version 2 (v2). Researching the performance difference between these two versions regarding network latencies and throughput enables the usage of containers in time-critical applications for Network Function Virtualization (NFV). Previous work does not consider \texttt{cgroups} as a potential source of latency in NFV in their evaluations. In this paper, we use commodity hard- and software to measure the difference between v1 and v2 in isolation. Our experiments show that the two versions achieve the same degree of isolation. However, the tail latencies of v1 are higher than v2, which can be explained by a more efficient, \SI{2.4}{\percent} less instruction-consuming implementation of v2. Based on our findings, we recommend using v2 for low-latency, lightweight virtualization network deployments wherever possible.</p>
 		  </div>
 		</div>
 		<div class="m-4">
 		<p></p>
 		<p>This page contains all scripts, resources, and information needed to reproduce or further evaluate the data from the Paper "Control Groups Added Latency in NFVs: An Update Needed?".</p>
-		<p>All scripts and raw data (for submission only a subset) can be found in the following repository: <a href="https://github.com/wiednerf/cgroups-nfv/tree/main"> https://github.com/wiednerf/cgroups-nfv/tree/main </a> </p>
+		<p>All scripts and raw data can be found in the following repository: <a href="https://github.com/wiednerf/cgroups-nfv/tree/main"> https://github.com/wiednerf/cgroups-nfv/tree/main </a> </p>
 		</div>
 <div class="fadein">
             </div>
