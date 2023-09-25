@@ -1,0 +1,43 @@
+\RequirePackage{luatex85}
+\documentclass{standalone}
+\usepackage{tumcolor}
+\usepackage{siunitx}
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+\begin{document}
+    \begin{tikzpicture}[>=latex]
+        \pgfplotscreateplotcyclelist{mystil}{
+            {TUMBlue, mark=*},
+            {TUMOrange, mark=x},
+            {TUMGreen, mark=square*},
+            {TUMBlue!30, mark=triangle*},
+            {TUMOrange!30, mark=diamond*},
+            {TUMGreen!30, mark=star}
+        }
+        \begin{axis}[
+            width=15cm,
+            height=10cm,
+            ymin=0,
+            grid=major,
+            ylabel = {Latency [\si{\milli\second}]},
+            xlabel = {Measurement time [\si{\second}]},
+            tick label style = {font=\scriptsize},
+            cycle list name=mystil,
+            mark options = {scale = .5}
+        ]
+
+            % runlatencies-pre-rate700000-repeat1.pcap.zst.trim_ms0.num_worst5000.worst.csv
+            % loop Not Known
+            \addplot table[
+                col sep=comma,
+                scatter,
+                only marks,
+                x expr= \thisrowno{1}/1000000000,
+                y expr= \thisrowno{0}/1000000,
+            ]{results/latencies-pre-rate700000-repeat1.pcap.zst.trim_ms0.num_worst5000.worst.csv};
+
+        \end{axis}
+    \end{tikzpicture}
+\end{document}
